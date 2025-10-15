@@ -95,7 +95,7 @@ function initEventListeners() {
             progressPercentage.textContent = '5%';
 
            // Replace with the live URL you get from Render
-const backendUrl = "https://YOUR-LIVE-BACKEND-URL.onrender.com"; 
+const backendUrl = "https://yt-downloader-backend-xtqw.onrender.com"; 
 
 // Update the fetch call
 const response = await fetch(`${backendUrl}/download`, {
@@ -220,3 +220,4 @@ function getCookie(name) {
     }
     return null;
 }
+
