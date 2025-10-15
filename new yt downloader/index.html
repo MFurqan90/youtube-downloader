@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader Pro - Download Videos & MP3</title>
+    <meta name="description" content="Free YouTube video downloader. Download YouTube videos in MP4, MP3, and other formats. Fast, secure, and works on all devices.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3>Loading YouTube Downloader</h3>
+            <p>Please wait while we prepare everything...</p>
+        </div>
+    </div>
+
+    <!-- App Install Banner -->
+    <div class="install-banner" id="installBanner">
+        <div class="install-content">
+            <div class="install-text">
+                <h4>Install YouTube Downloader Pro</h4>
+                <p>Get the best experience with our app. Fast, secure, and works offline.</p>
+            </div>
+            <div class="install-buttons">
+                <button class="install-btn install-later" id="installLaterBtn">Later</button>
+                <button class="install-btn install-now" id="installNowBtn">Install Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h4>We Use Cookies</h4>
+                <p>We use cookies to enhance your experience, remember your preferences, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-settings" id="cookieSettingsBtn">Settings</button>
+                <button class="cookie-btn cookie-accept" id="cookieAcceptBtn">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fab fa-youtube"></i>
+                    <h1>YouTube Downloader Pro</h1>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+                        <li><a href="#how-to-use"><i class="fas fa-question-circle"></i> How to Use</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-mobile-nav" id="closeMobileNav">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+            <li><a href="#how-to-use"><i class="fas fa-question-circle"></i> How to Use</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </div>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Download YouTube Videos & Audio</h2>
+                <p>Fast, free, and easy to use YouTube downloader. Convert YouTube videos to MP3, MP4, and more with high quality. Works on all devices!</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">10M+</span>
+                        <span class="stat-label">Downloads</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Available</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="download-section" id="downloadSection">
+            <div class="section-header">
+                <h3>Download YouTube Content</h3>
+                <p>Paste your YouTube URL below and choose your preferred format</p>
+            </div>
+            
+            <div class="url-input-container">
+                <input type="text" class="url-input" placeholder="Paste YouTube video URL here (e.g., https://www.youtube.com/watch?v=...)">
+                <button class="paste-btn" id="pasteBtn">
+                    <i class="fas fa-paste"></i> Paste
+                </button>
+            </div>
+            
+            <div class="url-validation" id="urlValidation">
+                <i class="fas fa-info-circle"></i>
+                <span>Please enter a valid YouTube URL</span>
+            </div>
+            
+            <div class="format-selection">
+                <h4>Select Download Format:</h4>
+                <div class="format-options">
+                    <div class="format-option active" data-format="mp4">
+                        <div class="format-icon">
+                            <i class="fas fa-file-video"></i>
+                        </div>
+                        <h3>MP4 Video</h3>
+                        <p>High Quality (1080p)</p>
+                        <span class="format-badge">Most Popular</span>
+                    </div>
+                    <div class="format-option" data-format="mp3">
+                        <div class="format-icon">
+                            <i class="fas fa-file-audio"></i>
+                        </div>
+                        <h3>MP3 Audio</h3>
+                        <p>High Quality (320kbps)</p>
+                        <span class="format-badge">Audio Only</span>
+                    </div>
+                    <div class="format-option" data-format="short">
+                        <div class="format-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Short Video</h3>
+                        <p>Optimized for Shorts</p>
+                        <span class="format-badge">Mobile Friendly</span>
+                    </div>
+                    <div class="format-option" data-format="720p">
+                        <div class="format-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>720p Video</h3>
+                        <p>Balanced Quality & Size</p>
+                        <span class="format-badge">Fast Download</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="download-btn" id="downloadBtn">
+                <i class="fas fa-download"></i> Download Now
+            </button>
+
+            <div class="quick-tips">
+                <h4><i class="fas fa-lightbulb"></i> Quick Tips:</h4>
+                <ul>
+                    <li>Copy the URL directly from your browser's address bar</li>
+                    <li>For best audio quality, choose MP3 format</li>
+                    <li>Short videos are optimized for mobile viewing</li>
+                    <li>Your downloads are secure and private</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="progress-section" id="progressSection">
+            <h2>Downloading Your Video</h2>
+            <div class="progress-info">
+                <span id="progressStatus">Preparing download...</span>
+                <span id="progressPercentage">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="file-info">
+                <span id="fileName">video.mp4</span>
+                <span id="fileSize">0 MB</span>
+            </div>
+            <div class="estimated-time">
+                <i class="fas fa-clock"></i>
+                <span id="estimatedTime">Estimated time: Calculating...</span>
+            </div>
+        </section>
+
+        <section class="success-section" id="successSection">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Download Complete!</h3>
+            <p>Your YouTube video has been successfully downloaded.</p>
+            <a href="#" class="download-link" id="downloadLink">
+                <i class="fas fa-download"></i> Save to Device
+            </a>
+            <p class="success-message">The file is ready for you to enjoy. Click the button above to save it to your device.</p>
+            <button class="download-again-btn" id="downloadAgainBtn">
+                <i class="fas fa-redo"></i> Download Another Video
+            </button>
+        </section>
+
+        <section class="features" id="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Fast Downloads</h3>
+                <p>Our optimized servers ensure the fastest download speeds possible, saving you time and bandwidth.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Secure & Private</h3>
+                <p>We don't store your downloaded content. Your privacy is our top priority with end-to-end encryption.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile Friendly</h3>
+                <p>Works perfectly on all devices - smartphones, tablets, laptops, and desktop computers.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="developer-info">
+                    <p>
+                        <i class="fas fa-code"></i>
+                        Developed by YouTube Downloader Pro Team
+                    </p>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 YouTube Downloader Pro. All rights reserved.</p>
+                    <p>This tool is for personal use only. Please respect YouTube's terms of service.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
